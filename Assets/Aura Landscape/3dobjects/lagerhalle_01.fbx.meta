@@ -1,0 +1,108 @@
+fileFormatVersion: 2
+guid: 91adf47412be40947a5d6fd1de6220b3
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: lagerhalle_01a
+    100006: lagerhalle_01a_colmesh
+    100008: lagerhalle_01b
+    100010: lagerhalle_01b_colmesh
+    100012: lagerhalle_01c
+    100014: lagerhalle_01c_colmesh
+    100016: verwaltung_01
+    100018: verwaltung_01_colmesh
+    400000: Camera
+    400002: //RootNode
+    400004: lagerhalle_01a
+    400006: lagerhalle_01a_colmesh
+    400008: lagerhalle_01b
+    400010: lagerhalle_01b_colmesh
+    400012: lagerhalle_01c
+    400014: lagerhalle_01c_colmesh
+    400016: verwaltung_01
+    400018: verwaltung_01_colmesh
+    2300000: lagerhalle_01a
+    2300002: lagerhalle_01a_colmesh
+    2300004: lagerhalle_01b
+    2300006: lagerhalle_01b_colmesh
+    2300008: lagerhalle_01c
+    2300010: lagerhalle_01c_colmesh
+    2300012: verwaltung_01
+    2300014: verwaltung_01_colmesh
+    3300000: lagerhalle_01a
+    3300002: lagerhalle_01a_colmesh
+    3300004: lagerhalle_01b
+    3300006: lagerhalle_01b_colmesh
+    3300008: lagerhalle_01c
+    3300010: lagerhalle_01c_colmesh
+    3300012: verwaltung_01
+    3300014: verwaltung_01_colmesh
+    4300000: Mesh
+    4300002: Mesh
+    4300004: Mesh
+    4300006: Mesh
+    4300008: lagerhalle_01a
+    4300010: lagerhalle_01b
+    4300012: lagerhalle_01c
+    4300014: verwaltung_01
+    4300016: lagerhalle_01a_colmesh
+    4300018: lagerhalle_01b_colmesh
+    4300020: lagerhalle_01c_colmesh
+    4300022: verwaltung_01_colmesh
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 37
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: d2317f1c0a64c894b9afcb994ce1322e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: building_main
+    100002: building_small
+    100004: Camera
+    100006: //RootNode
+    100008: silo_01
+    100010: silo_02
+    400000: building_main
+    400002: building_small
+    400004: Camera
+    400006: //RootNode
+    400008: silo_01
+    400010: silo_02
+    2300000: building_main
+    2300002: building_small
+    2300004: silo_01
+    2300006: silo_02
+    3300000: building_main
+    3300002: building_small
+    3300004: silo_01
+    3300006: silo_02
+    4300000: building_small
+    4300002: building_main
+    4300004: silo_02
+    4300006: silo_01
+    11100000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beton fundamente
+    second: {fileID: 2100000, guid: e9c8ad9dd5305c4478fd411b99c253f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beton haufen
+    second: {fileID: 2100000, guid: 6a2565ed3209c1040a981ad2c26dadb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beton wand 01
+    second: {fileID: 2100000, guid: 47538a78bb14bff42adc6f56331ad395, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: beton wand 02
+    second: {fileID: 2100000, guid: d1608bb7fb549e54ebce69b9c5b204de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal grau 01
+    second: {fileID: 2100000, guid: 9fa3963fed3c5554496491e05d29c68a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal grau 02
+    second: {fileID: 2100000, guid: 0801b6aaa1193f542adfff8be8eeaadd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal rohre
+    second: {fileID: 2100000, guid: cd065670cd5a53045bafcbfd1de7352f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schrauben
+    second: {fileID: 2100000, guid: 7ff3043e987621d418ea576f5fe61b1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silo 0001 concrete
+    second: {fileID: 2100000, guid: 1eba9fb76d2d94e44a82eda862c8cf06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silo 0001 metal
+    second: {fileID: 2100000, guid: 82a6748094e89274b8b9a90359859a84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silo 0002
+    second: {fileID: 2100000, guid: 48f289c73153a9c44850d9d08b91eb55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teer haufen
+    second: {fileID: 2100000, guid: c0a3729c85305564992be3faf4783716, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tuere
+    second: {fileID: 2100000, guid: d3d4090014a5c7e45a6823b6639ad18a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wellblech 01
+    second: {fileID: 2100000, guid: 84e4971111c816a4982978615e0cdb70, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 37
+    normalImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

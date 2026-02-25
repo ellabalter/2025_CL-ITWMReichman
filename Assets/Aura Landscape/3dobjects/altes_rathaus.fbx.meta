@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 6ea1cdc68e634864e9a93790ad23517f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: boden
+    100004: brunnen
+    100006: brunnen_duese
+    100008: Camera
+    100010: colmesh
+    100012: eingang
+    100014: lod_parts
+    100016: rathaus_main
+    100018: turm
+    100020: uebergang
+    400000: //RootNode
+    400002: boden
+    400004: brunnen
+    400006: brunnen_duese
+    400008: Camera
+    400010: colmesh
+    400012: eingang
+    400014: lod_parts
+    400016: rathaus_main
+    400018: turm
+    400020: uebergang
+    2300000: boden
+    2300002: brunnen
+    2300004: brunnen_duese
+    2300006: colmesh
+    2300008: eingang
+    2300010: lod_parts
+    2300012: rathaus_main
+    2300014: turm
+    2300016: uebergang
+    3300000: boden
+    3300002: brunnen
+    3300004: brunnen_duese
+    3300006: colmesh
+    3300008: eingang
+    3300010: lod_parts
+    3300012: rathaus_main
+    3300014: turm
+    3300016: uebergang
+    4300000: uebergang
+    4300002: rathaus_main
+    4300004: turm
+    4300006: eingang
+    4300008: lod_parts
+    4300010: brunnen
+    4300012: boden
+    4300014: colmesh
+    4300016: brunnen_lod_parts
+    4300018: brunnen_duese
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 34
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

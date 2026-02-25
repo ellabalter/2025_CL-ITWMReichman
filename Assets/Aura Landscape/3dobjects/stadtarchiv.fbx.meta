@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: 415f7bef6f33bc541aec63257f9417b0
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: boden
+    100002: Camera
+    100004: colmesh
+    100006: dachfenster
+    100008: dachrinne
+    100010: lod_parts
+    100012: //RootNode
+    100014: stadtarchiv
+    100016: tuergriff
+    100018: vhs dach
+    100020: vhs part1
+    100022: vhs part2
+    100024: vhs part3
+    100026: vhs turm
+    400000: boden
+    400002: Camera
+    400004: colmesh
+    400006: dachfenster
+    400008: dachrinne
+    400010: lod_parts
+    400012: //RootNode
+    400014: stadtarchiv
+    400016: tuergriff
+    400018: vhs dach
+    400020: vhs part1
+    400022: vhs part2
+    400024: vhs part3
+    400026: vhs turm
+    2300000: boden
+    2300002: colmesh
+    2300004: dachfenster
+    2300006: dachrinne
+    2300008: lod_parts
+    2300010: stadtarchiv
+    2300012: tuergriff
+    2300014: vhs dach
+    2300016: vhs part1
+    2300018: vhs part2
+    2300020: vhs part3
+    2300022: vhs turm
+    3300000: boden
+    3300002: colmesh
+    3300004: dachfenster
+    3300006: dachrinne
+    3300008: lod_parts
+    3300010: stadtarchiv
+    3300012: tuergriff
+    3300014: vhs dach
+    3300016: vhs part1
+    3300018: vhs part2
+    3300020: vhs part3
+    3300022: vhs turm
+    4300000: stadtarchiv
+    4300002: vhs part1
+    4300004: vhs part2
+    4300006: vhs dach
+    4300008: vhs part3
+    4300010: vhs turm
+    4300012: boden
+    4300014: colmesh
+    4300016: dachrinne
+    4300018: dachfenster
+    4300020: tuergriff
+    4300022: lod_parts
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 29
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

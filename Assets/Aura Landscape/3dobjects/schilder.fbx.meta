@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: 845d160c7db03e841a47c789e47bcbdb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: begrenzungspfosten
+    100002: Camera
+    100004: leitplanke_kurz
+    100006: leitplanke_lang
+    100008: schild_30
+    100010: schild_50
+    100012: schild_70
+    100014: schild_baustelle
+    100016: schild_einbahnstrasse_links
+    100018: schild_einbahnstrasse_rechts
+    100020: schild_einfahrt_verboten1
+    100022: schild_einfahrt_verboten2
+    100024: schild_fahrbahnverengung_links
+    100026: schild_fahrbahnverengung_rechts
+    100028: schild_halteverbot
+    100030: schild_halteverbot_rechts
+    100032: schild_kurve_doppelseitig
+    100034: schild_kurve_links
+    100036: schild_kurve_rechts
+    100038: schild_ortsausfahrt_oben
+    100040: schild_ortsausfahrt_seite
+    100042: schild_parken_strassenrand
+    100044: schild_parkverbot
+    100046: schild_pfeil_links1
+    100048: schild_pfeil_links2
+    100050: schild_pfeil_rechts1
+    100052: schild_pfeil_rechts2
+    100054: schild_stop
+    100056: //RootNode
+    400000: begrenzungspfosten
+    400002: Camera
+    400004: leitplanke_kurz
+    400006: leitplanke_lang
+    400008: schild_30
+    400010: schild_50
+    400012: schild_70
+    400014: schild_baustelle
+    400016: schild_einbahnstrasse_links
+    400018: schild_einbahnstrasse_rechts
+    400020: schild_einfahrt_verboten1
+    400022: schild_einfahrt_verboten2
+    400024: schild_fahrbahnverengung_links
+    400026: schild_fahrbahnverengung_rechts
+    400028: schild_halteverbot
+    400030: schild_halteverbot_rechts
+    400032: schild_kurve_doppelseitig
+    400034: schild_kurve_links
+    400036: schild_kurve_rechts
+    400038: schild_ortsausfahrt_oben
+    400040: schild_ortsausfahrt_seite
+    400042: schild_parken_strassenrand
+    400044: schild_parkverbot
+    400046: schild_pfeil_links1
+    400048: schild_pfeil_links2
+    400050: schild_pfeil_rechts1
+    400052: schild_pfeil_rechts2
+    400054: schild_stop
+    400056: //RootNode
+    2300000: begrenzungspfosten
+    2300002: leitplanke_kurz
+    2300004: leitplanke_lang
+    2300006: schild_30
+    2300008: schild_50
+    2300010: schild_70
+    2300012: schild_baustelle
+    2300014: schild_einbahnstrasse_links
+    2300016: schild_einbahnstrasse_rechts
+    2300018: schild_einfahrt_verboten1
+    2300020: schild_einfahrt_verboten2
+    2300022: schild_fahrbahnverengung_links
+    2300024: schild_fahrbahnverengung_rechts
+    2300026: schild_halteverbot
+    2300028: schild_halteverbot_rechts
+    2300030: schild_kurve_doppelseitig
+    2300032: schild_kurve_links
+    2300034: schild_kurve_rechts
+    2300036: schild_ortsausfahrt_oben
+    2300038: schild_ortsausfahrt_seite
+    2300040: schild_parken_strassenrand
+    2300042: schild_parkverbot
+    2300044: schild_pfeil_links1
+    2300046: schild_pfeil_links2
+    2300048: schild_pfeil_rechts1
+    2300050: schild_pfeil_rechts2
+    2300052: schild_stop
+    3300000: begrenzungspfosten
+    3300002: leitplanke_kurz
+    3300004: leitplanke_lang
+    3300006: schild_30
+    3300008: schild_50
+    3300010: schild_70
+    3300012: schild_baustelle
+    3300014: schild_einbahnstrasse_links
+    3300016: schild_einbahnstrasse_rechts
+    3300018: schild_einfahrt_verboten1
+    3300020: schild_einfahrt_verboten2
+    3300022: schild_fahrbahnverengung_links
+    3300024: schild_fahrbahnverengung_rechts
+    3300026: schild_halteverbot
+    3300028: schild_halteverbot_rechts
+    3300030: schild_kurve_doppelseitig
+    3300032: schild_kurve_links
+    3300034: schild_kurve_rechts
+    3300036: schild_ortsausfahrt_oben
+    3300038: schild_ortsausfahrt_seite
+    3300040: schild_parken_strassenrand
+    3300042: schild_parkverbot
+    3300044: schild_pfeil_links1
+    3300046: schild_pfeil_links2
+    3300048: schild_pfeil_rechts1
+    3300050: schild_pfeil_rechts2
+    3300052: schild_stop
+    4300000: Mesh
+    4300002: Mesh
+    4300004: Mesh
+    4300006: Mesh
+    4300008: Mesh
+    4300010: Mesh
+    4300012: Mesh
+    4300014: Mesh
+    4300016: Mesh
+    4300018: Mesh
+    4300020: Mesh
+    4300022: Mesh
+    4300024: Mesh
+    4300026: Mesh
+    4300028: Mesh
+    4300030: Mesh
+    4300032: Mesh
+    4300034: Mesh
+    4300036: Mesh
+    4300038: Mesh
+    4300040: Mesh
+    4300042: Mesh
+    4300044: Mesh
+    4300046: Mesh
+    4300048: Mesh
+    4300050: Mesh
+    4300052: Mesh
+    4300054: schild_ortsausfahrt_oben
+    4300056: schild_ortsausfahrt_seite
+    4300058: leitplanke_lang
+    4300060: leitplanke_kurz
+    4300062: schild_30
+    4300064: schild_50
+    4300066: schild_70
+    4300068: schild_parken_strassenrand
+    4300070: schild_halteverbot_rechts
+    4300072: schild_halteverbot
+    4300074: schild_parkverbot
+    4300076: schild_stop
+    4300078: schild_einfahrt_verboten1
+    4300080: schild_pfeil_rechts1
+    4300082: schild_pfeil_links1
+    4300084: schild_einfahrt_verboten2
+    4300086: schild_pfeil_rechts2
+    4300088: schild_pfeil_links2
+    4300090: schild_einbahnstrasse_links
+    4300092: schild_einbahnstrasse_rechts
+    4300094: schild_baustelle
+    4300096: schild_fahrbahnverengung_links
+    4300098: schild_fahrbahnverengung_rechts
+    4300100: schild_kurve_links
+    4300102: schild_kurve_rechts
+    4300104: schild_kurve_doppelseitig
+    4300106: begrenzungspfosten
+    11100000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leitplanke
+    second: {fileID: 2100000, guid: 38c41647b1bf68c40a6cfbc33ff5cab5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schilder
+    second: {fileID: 2100000, guid: ad3411f91e9376840875e833ff59cb7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schilder front 04
+    second: {fileID: 2100000, guid: 9c4a7708954c90344a8e95c3fc38d684, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schilder metal
+    second: {fileID: 2100000, guid: f5eb58b5ce0c312429779386fc6c8aba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schilderbr_cken beton
+    second: {fileID: 2100000, guid: 1eb8cb92cffda1a44a60998b8d0f4698, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schilderbr_cken metal
+    second: {fileID: 2100000, guid: 2880b9efaefb1124a8137713099b57ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schilderbr_cken traeger
+    second: {fileID: 2100000, guid: bcac0d28b044b894eaa3310862612e4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schilderbr_cken traeger2
+    second: {fileID: 2100000, guid: 2bc7ecdf917674b408ceea5648769be8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 36
+    normalImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,94 @@
+fileFormatVersion: 2
+guid: 2eb325bd61feafd478584a4078725fd0
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: lagerhalle_02a
+    100006: lagerhalle_02a_colmesh
+    100008: lagerhalle_02b
+    100010: lagerhalle_02b_colmesh
+    100012: verwaltung_02
+    100014: verwaltung_02_colmesh
+    400000: Camera
+    400002: //RootNode
+    400004: lagerhalle_02a
+    400006: lagerhalle_02a_colmesh
+    400008: lagerhalle_02b
+    400010: lagerhalle_02b_colmesh
+    400012: verwaltung_02
+    400014: verwaltung_02_colmesh
+    2300000: lagerhalle_02a
+    2300002: lagerhalle_02a_colmesh
+    2300004: lagerhalle_02b
+    2300006: lagerhalle_02b_colmesh
+    2300008: verwaltung_02
+    2300010: verwaltung_02_colmesh
+    3300000: lagerhalle_02a
+    3300002: lagerhalle_02a_colmesh
+    3300004: lagerhalle_02b
+    3300006: lagerhalle_02b_colmesh
+    3300008: verwaltung_02
+    3300010: verwaltung_02_colmesh
+    4300000: lagerhalle_02b_colmesh
+    4300002: verwaltung_02
+    4300004: lagerhalle_02a
+    4300006: lagerhalle_02b
+    4300008: verwaltung_02_colmesh
+    4300010: lagerhalle_02a_colmesh
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 38
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: bc1f215a23797a34199707b2989f0233
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: balkon
+    100002: boden
+    100004: Camera
+    100006: colmesh
+    100008: dachrinne
+    100010: glassdach fixed
+    100012: glassdach small
+    100014: lod parts
+    100016: logo_meyer
+    100018: logo_starforce
+    100020: logo_vis
+    100022: part1
+    100024: part11
+    100026: part12
+    100028: part4
+    100030: part5
+    100032: part6
+    100034: part7
+    100036: part8
+    100038: part9
+    100040: //RootNode
+    100042: sternschild
+    400000: balkon
+    400002: boden
+    400004: Camera
+    400006: colmesh
+    400008: dachrinne
+    400010: glassdach fixed
+    400012: glassdach small
+    400014: lod parts
+    400016: logo_meyer
+    400018: logo_starforce
+    400020: logo_vis
+    400022: part1
+    400024: part11
+    400026: part12
+    400028: part4
+    400030: part5
+    400032: part6
+    400034: part7
+    400036: part8
+    400038: part9
+    400040: //RootNode
+    400042: sternschild
+    2300000: balkon
+    2300002: boden
+    2300004: colmesh
+    2300006: dachrinne
+    2300008: glassdach fixed
+    2300010: glassdach small
+    2300012: lod parts
+    2300014: logo_meyer
+    2300016: logo_starforce
+    2300018: logo_vis
+    2300020: part1
+    2300022: part11
+    2300024: part12
+    2300026: part4
+    2300028: part5
+    2300030: part6
+    2300032: part7
+    2300034: part8
+    2300036: part9
+    2300038: sternschild
+    3300000: balkon
+    3300002: boden
+    3300004: colmesh
+    3300006: dachrinne
+    3300008: glassdach fixed
+    3300010: glassdach small
+    3300012: lod parts
+    3300014: logo_meyer
+    3300016: logo_starforce
+    3300018: logo_vis
+    3300020: part1
+    3300022: part11
+    3300024: part12
+    3300026: part4
+    3300028: part5
+    3300030: part6
+    3300032: part7
+    3300034: part8
+    3300036: part9
+    3300038: sternschild
+    4300000: part1
+    4300002: part2
+    4300004: part3
+    4300006: part4
+    4300008: part5
+    4300010: part6
+    4300012: lod parts
+    4300014: part7
+    4300016: part8
+    4300018: part9
+    4300020: part12
+    4300022: part10
+    4300024: colmesh
+    4300026: boden
+    4300028: part11
+    4300030: logo_meyer
+    4300032: glassdach fixed
+    4300034: glassdach small
+    4300036: balkon
+    4300038: logo_starforce
+    4300040: logo_vis
+    4300042: dachrinne
+    4300044: sternschild
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 35
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

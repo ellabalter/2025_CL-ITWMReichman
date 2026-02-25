@@ -1,0 +1,84 @@
+fileFormatVersion: 2
+guid: 1866ca4e56c6d9343be057e9ae369330
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera
+    100002: junction_box_02
+    100004: junction_box_03
+    100006: junction_box_04
+    100008: //RootNode
+    100010: Mesh
+    400000: Camera
+    400002: junction_box_02
+    400004: junction_box_03
+    400006: junction_box_04
+    400008: //RootNode
+    400010: Mesh
+    2300000: junction_box_02
+    2300002: junction_box_03
+    2300004: junction_box_04
+    2300006: Mesh
+    3300000: junction_box_02
+    3300002: junction_box_03
+    3300004: junction_box_04
+    3300006: Mesh
+    4300000: junction_box_02
+    4300002: junction_box_03
+    4300004: junction_box_04
+    4300006: Mesh
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 32
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -1,0 +1,114 @@
+fileFormatVersion: 2
+guid: ef9278f7d3a4fcd40bd2fd776c4e3986
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera
+    100002: transformator_01a
+    100004: transformator_01b
+    100006: transformator_02a
+    100008: transformator_02b
+    100010: transformator_03a
+    100012: transformator_03b
+    100014: transformator_03c
+    100016: transformator_04
+    100018: transformator_05
+    100020: transformator_06
+    100022: //RootNode
+    400000: Camera
+    400002: transformator_01a
+    400004: transformator_01b
+    400006: transformator_02a
+    400008: transformator_02b
+    400010: transformator_03a
+    400012: transformator_03b
+    400014: transformator_03c
+    400016: transformator_04
+    400018: transformator_05
+    400020: transformator_06
+    400022: //RootNode
+    2300000: transformator_01a
+    2300002: transformator_01b
+    2300004: transformator_02a
+    2300006: transformator_02b
+    2300008: transformator_03a
+    2300010: transformator_03b
+    2300012: transformator_03c
+    2300014: transformator_04
+    2300016: transformator_05
+    2300018: transformator_06
+    3300000: transformator_01a
+    3300002: transformator_01b
+    3300004: transformator_02a
+    3300006: transformator_02b
+    3300008: transformator_03a
+    3300010: transformator_03b
+    3300012: transformator_03c
+    3300014: transformator_04
+    3300016: transformator_05
+    3300018: transformator_06
+    4300000: transformator_01a
+    4300002: transformator_01b
+    4300004: transformator_02a
+    4300006: transformator_02b
+    4300008: transformator_03a
+    4300010: transformator_03b
+    4300012: transformator_03c
+    4300014: transformator_04
+    4300016: transformator_05
+    4300018: transformator_06
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 38
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

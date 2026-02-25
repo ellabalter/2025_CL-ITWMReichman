@@ -1,0 +1,109 @@
+fileFormatVersion: 2
+guid: 9b9ac2d40e8170340ad910ebb1f7bd4c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera
+    100002: colmesh
+    100004: gebaeude_01
+    100006: gebaeude_02
+    100008: mauer_part1
+    100010: mauer_part2
+    100012: //RootNode
+    100014: schrottpresse_lod_parts1
+    100016: schrottpresse_lod_parts2
+    100018: schrottpresse_main
+    100020: verkippung
+    400000: Camera
+    400002: colmesh
+    400004: gebaeude_01
+    400006: gebaeude_02
+    400008: mauer_part1
+    400010: mauer_part2
+    400012: //RootNode
+    400014: schrottpresse_lod_parts1
+    400016: schrottpresse_lod_parts2
+    400018: schrottpresse_main
+    400020: verkippung
+    2300000: colmesh
+    2300002: gebaeude_01
+    2300004: gebaeude_02
+    2300006: mauer_part1
+    2300008: mauer_part2
+    2300010: schrottpresse_lod_parts1
+    2300012: schrottpresse_lod_parts2
+    2300014: schrottpresse_main
+    2300016: verkippung
+    3300000: colmesh
+    3300002: gebaeude_01
+    3300004: gebaeude_02
+    3300006: mauer_part1
+    3300008: mauer_part2
+    3300010: schrottpresse_lod_parts1
+    3300012: schrottpresse_lod_parts2
+    3300014: schrottpresse_main
+    3300016: verkippung
+    4300000: schrottpresse_lod_parts2
+    4300002: schrottpresse_lod_parts1
+    4300004: schrottpresse_main
+    4300006: mauer_part1
+    4300008: mauer_part2
+    4300010: gebaeude_02
+    4300012: verkippung
+    4300014: gebaeude_01
+    4300016: colmesh
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 37
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

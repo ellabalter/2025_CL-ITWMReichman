@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: af253f2f5e794ce47a084f33232a0f3f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: anbau
+    100002: baumfassungen
+    100004: boden
+    100006: Camera
+    100008: colmesh
+    100010: gelaender
+    100012: mauer1
+    100014: mauer2
+    100016: mauer3
+    100018: mauer4
+    100020: mauer5
+    100022: mauer6
+    100024: mauer7
+    100026: mauer8
+    100028: //RootNode
+    100030: teil1
+    100032: teil2
+    100034: teil3
+    400000: anbau
+    400002: baumfassungen
+    400004: boden
+    400006: Camera
+    400008: colmesh
+    400010: gelaender
+    400012: mauer1
+    400014: mauer2
+    400016: mauer3
+    400018: mauer4
+    400020: mauer5
+    400022: mauer6
+    400024: mauer7
+    400026: mauer8
+    400028: //RootNode
+    400030: teil1
+    400032: teil2
+    400034: teil3
+    2300000: anbau
+    2300002: baumfassungen
+    2300004: boden
+    2300006: colmesh
+    2300008: gelaender
+    2300010: mauer1
+    2300012: mauer2
+    2300014: mauer3
+    2300016: mauer4
+    2300018: mauer5
+    2300020: mauer6
+    2300022: mauer7
+    2300024: mauer8
+    2300026: teil1
+    2300028: teil2
+    2300030: teil3
+    3300000: anbau
+    3300002: baumfassungen
+    3300004: boden
+    3300006: colmesh
+    3300008: gelaender
+    3300010: mauer1
+    3300012: mauer2
+    3300014: mauer3
+    3300016: mauer4
+    3300018: mauer5
+    3300020: mauer6
+    3300022: mauer7
+    3300024: mauer8
+    3300026: teil1
+    3300028: teil2
+    3300030: teil3
+    4300000: teil1
+    4300002: teil2
+    4300004: teil3
+    4300006: anbau
+    4300008: mauer8
+    4300010: mauer1
+    4300012: mauer4
+    4300014: mauer2
+    4300016: mauer3
+    4300018: mauer5
+    4300020: mauer6
+    4300022: mauer7
+    4300024: gelaender
+    4300026: boden
+    4300028: colmesh
+    4300030: baumfassungen
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 37
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

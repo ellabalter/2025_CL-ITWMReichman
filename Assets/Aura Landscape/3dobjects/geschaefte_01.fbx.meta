@@ -1,0 +1,109 @@
+fileFormatVersion: 2
+guid: dc29cc008357320409db9aa0687edaa4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera
+    100002: colmesh_geschaeft_01a
+    100004: colmesh_geschaeft_01b
+    100006: colmesh_geschaeft_01c
+    100008: geschaeft_01a
+    100010: geschaeft_01b
+    100012: geschaeft_01c
+    100014: //RootNode
+    100016: logo_i
+    100018: logo_s
+    100020: logo_v
+    400000: Camera
+    400002: colmesh_geschaeft_01a
+    400004: colmesh_geschaeft_01b
+    400006: colmesh_geschaeft_01c
+    400008: geschaeft_01a
+    400010: geschaeft_01b
+    400012: geschaeft_01c
+    400014: //RootNode
+    400016: logo_i
+    400018: logo_s
+    400020: logo_v
+    2300000: colmesh_geschaeft_01a
+    2300002: colmesh_geschaeft_01b
+    2300004: colmesh_geschaeft_01c
+    2300006: geschaeft_01a
+    2300008: geschaeft_01b
+    2300010: geschaeft_01c
+    2300012: logo_i
+    2300014: logo_s
+    2300016: logo_v
+    3300000: colmesh_geschaeft_01a
+    3300002: colmesh_geschaeft_01b
+    3300004: colmesh_geschaeft_01c
+    3300006: geschaeft_01a
+    3300008: geschaeft_01b
+    3300010: geschaeft_01c
+    3300012: logo_i
+    3300014: logo_s
+    3300016: logo_v
+    4300000: logo_i
+    4300002: colmesh_geschaeft_01a
+    4300004: geschaeft_01a
+    4300006: geschaeft_01c
+    4300008: geschaeft_01b
+    4300010: colmesh_geschaeft_01b
+    4300012: colmesh_geschaeft_01c
+    4300014: logo_v
+    4300016: logo_s
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 37
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

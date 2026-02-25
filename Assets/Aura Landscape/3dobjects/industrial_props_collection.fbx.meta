@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: a89617948bdee9047b7453ab682afe50
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Camera
+    100002: gastank_01a
+    100004: generator_01a
+    100006: generator_02a
+    100008: //RootNode
+    100010: oeltank_01a
+    100012: oeltank_02a_large
+    100014: oeltank_02a_medium
+    100016: oeltank_02a_small
+    100018: oeltank_03a
+    100020: oeltank_04a
+    400000: Camera
+    400002: gastank_01a
+    400004: generator_01a
+    400006: generator_02a
+    400008: //RootNode
+    400010: oeltank_01a
+    400012: oeltank_02a_large
+    400014: oeltank_02a_medium
+    400016: oeltank_02a_small
+    400018: oeltank_03a
+    400020: oeltank_04a
+    2300000: gastank_01a
+    2300002: generator_01a
+    2300004: generator_02a
+    2300006: oeltank_01a
+    2300008: oeltank_02a_large
+    2300010: oeltank_02a_medium
+    2300012: oeltank_02a_small
+    2300014: oeltank_03a
+    2300016: oeltank_04a
+    3300000: gastank_01a
+    3300002: generator_01a
+    3300004: generator_02a
+    3300006: oeltank_01a
+    3300008: oeltank_02a_large
+    3300010: oeltank_02a_medium
+    3300012: oeltank_02a_small
+    3300014: oeltank_03a
+    3300016: oeltank_04a
+    4300000: tank1a
+    4300002: tank1b
+    4300004: tank1c
+    4300006: tank1d
+    4300008: tank1e
+    4300010: tank1f
+    4300012: generator1a
+    4300014: generator1b
+    4300016: generator2a
+    4300018: generator2b
+    4300020: generator3a
+    4300022: generator3b
+    4300024: tank2a_small
+    4300026: tank2a_medium
+    4300028: tank2a_large
+    4300030: tank2b_small
+    4300032: tank2b_medium
+    4300034: tank2b_large
+    4300036: tank2c_small
+    4300038: tank2c_medium
+    4300040: tank2d_small
+    4300042: tank2c_large
+    4300044: tank2d_medium
+    4300046: tank2d_large
+    4300048: tank2e_small
+    4300050: tank2e_medium
+    4300052: tank2e_large
+    4300054: tank2f_small
+    4300056: tank2f_medium
+    4300058: tank2f_large
+    4300060: tank3a
+    4300062: tank3b
+    4300064: tank3c
+    4300066: tank3d
+    4300068: tank4a
+    4300070: tank4b
+    4300072: gastank1b
+    4300074: gastank1a
+    4300076: oeltank_03a
+    4300078: oeltank_01a
+    4300080: generator_01a
+    4300082: generator_02a
+    4300084: oeltank_02a_large
+    4300086: oeltank_02a_medium
+    4300088: oeltank_02a_small
+    4300090: gastank_01a
+    4300092: oeltank_04a
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 31
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

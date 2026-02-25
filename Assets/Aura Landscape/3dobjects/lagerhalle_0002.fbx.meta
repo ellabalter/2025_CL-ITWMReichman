@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: c193d6830c1c1174195c27c1a3e85771
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Camera
+    100002: //RootNode
+    100004: lagerhalle_0002a
+    100006: lagerhalle_0002a_colmesh
+    100008: lagerhalle_0002a_tuere
+    100010: lagerhalle_0002b
+    100012: lagerhalle_0002b_colmesh
+    100014: lagerhalle_0002b_tuere
+    100016: stahltraeger_1
+    100018: stahltraeger_1_colmesh
+    100020: stahltraeger_2
+    100022: stahltraeger_2_colmesh
+    400000: Camera
+    400002: //RootNode
+    400004: lagerhalle_0002a
+    400006: lagerhalle_0002a_colmesh
+    400008: lagerhalle_0002a_tuere
+    400010: lagerhalle_0002b
+    400012: lagerhalle_0002b_colmesh
+    400014: lagerhalle_0002b_tuere
+    400016: stahltraeger_1
+    400018: stahltraeger_1_colmesh
+    400020: stahltraeger_2
+    400022: stahltraeger_2_colmesh
+    2300000: lagerhalle_0002a
+    2300002: lagerhalle_0002a_colmesh
+    2300004: lagerhalle_0002a_tuere
+    2300006: lagerhalle_0002b
+    2300008: lagerhalle_0002b_colmesh
+    2300010: lagerhalle_0002b_tuere
+    2300012: stahltraeger_1
+    2300014: stahltraeger_1_colmesh
+    2300016: stahltraeger_2
+    2300018: stahltraeger_2_colmesh
+    3300000: lagerhalle_0002a
+    3300002: lagerhalle_0002a_colmesh
+    3300004: lagerhalle_0002a_tuere
+    3300006: lagerhalle_0002b
+    3300008: lagerhalle_0002b_colmesh
+    3300010: lagerhalle_0002b_tuere
+    3300012: stahltraeger_1
+    3300014: stahltraeger_1_colmesh
+    3300016: stahltraeger_2
+    3300018: stahltraeger_2_colmesh
+    4300000: stahltraeger_2
+    4300002: lagerhalle_0002a
+    4300004: stahltraeger_1_colmesh
+    4300006: lagerhalle_0002a_colmesh
+    4300008: lagerhalle_0002b_colmesh
+    4300010: lagerhalle_0002b_tuere
+    4300012: lagerhalle_0002a_tuere
+    4300014: lagerhalle_0002b
+    4300016: stahltraeger_1
+    4300018: stahltraeger_2_colmesh
+    11100000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: colmesh
+    second: {fileID: 2100000, guid: 774c1ef54044e2a40b573ec98bd421e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dach
+    second: {fileID: 2100000, guid: 055188362eede094fb1f2b5455b71126, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fenster
+    second: {fileID: 2100000, guid: ceebef98af7d0fb408a335a5803f19fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fensterrahmen
+    second: {fileID: 2100000, guid: 6d84fd2bf7a47c94283e33b10268021f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fundament boden
+    second: {fileID: 2100000, guid: 4ccab5a9063d5d5439c5bd5f450e8d3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fundament wand
+    second: {fileID: 2100000, guid: b39305ec82bf85c40a3ffab2a76e20e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hallenboden
+    second: {fileID: 2100000, guid: c113a3e50a2ba164b85a8e3ddd8bfef6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hallenwand
+    second: {fileID: 2100000, guid: 98389500bc6deb8458739b39ed87e87f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mauer unten
+    second: {fileID: 2100000, guid: 4e54b9fd8dfa71445a1fb0c5c5a18a8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 668a662119a674d4d8c53160857214d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rolltor
+    second: {fileID: 2100000, guid: 72da4803967fa54498c969d44969350e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stahltraeger
+    second: {fileID: 2100000, guid: 516eff1cb9d160c4db3c85232878d384, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tuere
+    second: {fileID: 2100000, guid: 29bc4f8e3397f584088e6c90a292774f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 37
+    normalImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
