@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "com.coplaydev.unity-mcp": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main",
+    "com.unity.cloud.gltfast": "6.10.1",
+    "com.unity.collab-proxy": "2.1.0",
     "com.unity.multiplayer.center": "1.0.0",
+    "com.unity.shadergraph": "17.0.3",
     "com.unity.xr.interaction.toolkit": "3.0.8",
     "com.unity.xr.openxr": "1.13.2",
     "com.unity.modules.accessibility": "1.0.0",
@@ -34,7 +38,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.unity.collab-proxy": "2.1.0"
+    "com.unity.modules.xr": "1.0.0"
   }
 }
