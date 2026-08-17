@@ -4834,7 +4834,7 @@ Transform:
   m_GameObject: {fileID: 547384757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5037,9 +5037,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11642a1fcab174ed9916b6d07495a017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 12
+  forwardSpeed: 5
   autoDrive: 1
   turnRate: 40
+  driveDurationSeconds: 300
+  loopStartX: 0
 --- !u!1 &553328841
 GameObject:
   m_ObjectHideFlags: 0
@@ -14591,10 +14593,19 @@ MonoBehaviour:
   - {fileID: 3114957575949065144, guid: 1da1bdabfc1fe4cb78a6e21c43d9d100, type: 3}
   gasStationPrefabs:
   - {fileID: 3990459390172133456, guid: b584be1c9c52e45f0aadbf8aa9897c8f, type: 3}
+  trashCanPrefab: {fileID: 5390452360692660160, guid: 5621aa4915c640b4da9c0a273c74e932, type: 3}
+  supermarketEveryNChunks: 8
+  catsPerChunk: 2
+  electricityPoleEveryNTiles: 5
+  parkingZoneEveryNChunks: 15
+  parkingCarPrefabs:
+  - {fileID: 793685457875359081, guid: 9c92406c14c380849bca38280c133c64, type: 3}
+  - {fileID: 3786326439804512758, guid: f4e73d783d681e04ca355f6c8a50af8e, type: 3}
+  - {fileID: 2922220883736789182, guid: 041e4e3100f07184cacfe35dce34f022, type: 3}
   tileLength: 10
   tilesPerChunk: 10
-  chunksAhead: 5
-  chunksBehind: 1
+  chunksAhead: 6
+  chunksBehind: 2
   lotHalfWidth: 14
   sidewalkZ: 5.5
   roadY: 0.15
