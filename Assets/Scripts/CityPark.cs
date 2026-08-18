@@ -88,6 +88,16 @@ public class CityPark : MonoBehaviour
         go.transform.position = worldPos;
         go.transform.rotation = Quaternion.Euler(0f, yaw, 0f);
         go.hideFlags = HideFlags.DontSave;
+
+        // Sit on grass surface (grassY = 0.005)
+        var rends = go.GetComponentsInChildren<MeshRenderer>();
+        if (rends.Length > 0)
+        {
+            var b = rends[0].bounds;
+            for (int i = 1; i < rends.Length; i++) b.Encapsulate(rends[i].bounds);
+            var p = go.transform.position;
+            go.transform.position = new Vector3(p.x, p.y - b.min.y + 0.005f, p.z);
+        }
     }
 
     void Block(Material mat, Vector3 worldPos, Vector3 sz)

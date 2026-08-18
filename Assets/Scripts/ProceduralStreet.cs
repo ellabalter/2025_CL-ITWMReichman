@@ -23,8 +23,8 @@ public class ProceduralStreet : MonoBehaviour
     public int tilesPerChunk = 10;
     public int chunksAhead = 5;
     public int chunksBehind = 1;
-    public float lotHalfWidth = 14f;
-    public float sidewalkZ = 5.5f;
+    public float lotHalfWidth = 15.5f;
+    public float sidewalkZ = 7.0f;
     public float roadY = 0.15f;
     public float lotMargin = 1.5f;
     public int playgroundEveryNChunks = 2;
@@ -400,7 +400,7 @@ public class ProceduralStreet : MonoBehaviour
             bay.side = bsSide;
             bay.bayLength = bayLen;
             bay.extraWidth = bayExtra;
-            bay.roadEdgeZ = 1.1f;
+            bay.roadEdgeZ = 3.5f;
             bay.roadSurfaceY = roadY;
             bay.roadSurfaceMaterial = pavementMat;
             bay.Build();
@@ -476,7 +476,7 @@ public class ProceduralStreet : MonoBehaviour
             var stripe = curbGo.AddComponent<CurbStripe>();
             stripe.length = chunkLen;
             stripe.side = side;
-            stripe.zOffset = 1.1f;
+            stripe.zOffset = 3.5f;
             stripe.stripeHeight = 0.08f;
             stripe.stripeWidth = 0.14f;
 
@@ -530,22 +530,74 @@ public class ProceduralStreet : MonoBehaviour
             garden.Build();
         }
 
-        // Cats disabled — use a real cat asset from the Asset Store instead
+        // Cats near trash bins and buildings — auto-load Kitty_001 if not manually assigned
+#if UNITY_EDITOR
+        if (catPrefab == null)
+            catPrefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/ithappy/Animals_FREE/Prefabs/Kitty_001.prefab");
+#endif
+        if (catPrefab != null)
+        {
+            // Collect trash bin positions to place cats nearby
+            var trashPositions = new System.Collections.Generic.List<Vector3>();
+            foreach (Transform c in chunk.transform)
+                if (c.name.StartsWith("TrashBin")) trashPositions.Add(c.position);
+
+            int catsThisChunk = 2 + rng.Next(2); // 2–3 cats per chunk
+            for (int ci = 0; ci < catsThisChunk; ci++)
+            {
+                float catX, catZ;
+                int catSide = rng.NextDouble() < 0.5 ? -1 : 1;
+
+                if (trashPositions.Count > 0 && rng.NextDouble() < 0.6f)
+                {
+                    // Place next to a trash bin
+                    var bin = trashPositions[rng.Next(trashPositions.Count)];
+                    catX = bin.x + (float)(rng.NextDouble() * 1.5 - 0.75);
+                    catZ = bin.z + (float)(rng.NextDouble() * 0.6 - 0.3);
+                    catSide = bin.z >= 0 ? 1 : -1;
+                }
+                else
+                {
+                    // Place along building edge / inner sidewalk
+                    int catT = rng.Next(tilesPerChunk);
+                    catX = chunkStartX + catT * tileLength + (float)(rng.NextDouble() * tileLength * 0.8f);
+                    // Keep between road edge (sidewalkZ=5.5) and buildings — never on road
+                    catZ = catSide * (sidewalkZ + 0.5f + (float)(rng.NextDouble() * 2.5f));
+                }
+
+                var catGo = new GameObject("StreetCat_" + idx + "_" + ci);
+                catGo.transform.SetParent(chunk.transform, false);
+                catGo.hideFlags = HideFlags.DontSave;
+                // Face along the street
+                catGo.transform.rotation = Quaternion.Euler(0f, catSide > 0 ? 90f : -90f, 0f);
+                catGo.transform.position = new Vector3(catX, roadY, catZ);
+                var sc = catGo.AddComponent<StreetCat>();
+                sc.catPrefab     = catPrefab;
+                sc.patrolRange   = 3f + (float)(rng.NextDouble() * 4f);
+                sc.speed         = 0.5f + (float)(rng.NextDouble() * 0.4f);
+                sc.sidewalkMinZ  = sidewalkZ - 0.5f; // just inside road edge
+                sc.sidewalkMaxZ  = sidewalkZ + 3.5f; // up to building line
+                sc.Build();
+            }
+        }
 
         // Electricity poles along both sidewalks — skip on parking zone chunks
         if (electricityPoleEveryNTiles > 0 && !hasParkingZone)
         {
+            float poleSpacingM = electricityPoleEveryNTiles * tileLength;
             for (int t = 0; t < tilesPerChunk; t += electricityPoleEveryNTiles)
             {
                 for (int side = -1; side <= 1; side += 2)
                 {
-                    if (rng.NextDouble() < 0.25f) continue;
+                    // No skip — every pole must exist so wires connect to the next
                     var poleGo = new GameObject("ElecPole");
                     poleGo.transform.SetParent(chunk.transform, false);
                     poleGo.hideFlags = HideFlags.DontSave;
-                    float xJit = (float)(rng.NextDouble() * 2.0);
-                    poleGo.transform.position = new Vector3(chunkStartX + t * tileLength + xJit, 0f, side * (sidewalkZ + 2.5f));
-                    poleGo.AddComponent<ElectricityPole>();
+                    // No X jitter — exact position so wires line up
+                    poleGo.transform.position = new Vector3(chunkStartX + t * tileLength, 0f, side * (sidewalkZ + 2.5f));
+                    var pole = poleGo.AddComponent<ElectricityPole>();
+                    pole.poleSpacing = poleSpacingM;
                 }
             }
         }
@@ -562,7 +614,7 @@ public class ProceduralStreet : MonoBehaviour
             var pz = pzGo.AddComponent<ParkingZone>();
             pz.zoneLength = 36f;
             pz.side = pzSide;
-            pz.curbZ = 1.1f;
+            pz.curbZ = 3.5f;
             pz.carPrefabs = parkingCarPrefabs;
             pz.roadSurfaceMaterial = pavementMat;
             pz.Build();
@@ -573,7 +625,7 @@ public class ProceduralStreet : MonoBehaviour
             plGo.transform.position = new Vector3(chunkStartX + tileLength * 4f, 0f, 0f);
             var pl = plGo.AddComponent<ParkingLot>();
             pl.side = -pzSide;
-            pl.roadEdgeZ = 1.1f;
+            pl.roadEdgeZ = 3.5f;
             pl.rows = 2;
             pl.cols = 4;
             pl.carPrefabs = parkingCarPrefabs;
@@ -584,15 +636,20 @@ public class ProceduralStreet : MonoBehaviour
         _spawned[idx] = chunk;
     }
 
-    void GroundAlign(GameObject go)
+    void GroundAlign(GameObject go, float targetY = 0f)
     {
-        var rends = go.GetComponentsInChildren<Renderer>();
+        // Some prefabs are saved with a baked Y offset — zero it out first
+        var p = go.transform.position;
+        go.transform.position = new Vector3(p.x, 0f, p.z);
+
+        // Use only MeshRenderers — skips particle systems / LOD helpers that bloat bounds
+        var rends = go.GetComponentsInChildren<MeshRenderer>();
         if (rends.Length == 0) return;
         var b = rends[0].bounds;
         for (int i = 1; i < rends.Length; i++) b.Encapsulate(rends[i].bounds);
         float minY = b.min.y;
-        var p = go.transform.position;
-        go.transform.position = new Vector3(p.x, p.y - minY, p.z);
+        p = go.transform.position;
+        go.transform.position = new Vector3(p.x, -minY + targetY, p.z);
     }
 
     void KeepOffRoad(GameObject go, int side)
@@ -626,6 +683,9 @@ public class ProceduralStreet : MonoBehaviour
         {
             go = Instantiate(prefab, parent);
         }
+        // Zero out any baked Y offset the prefab may have been saved with
+        var p = go.transform.position;
+        go.transform.position = new Vector3(p.x, 0f, p.z);
         SetHideFlagsRecursive(go.transform);
         return go;
     }

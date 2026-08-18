@@ -8,7 +8,7 @@ public class BusBay : MonoBehaviour
     public int side = 1;
     public float bayLength = 12f;
     public float extraWidth = 3.0f;
-    public float roadEdgeZ = 1.1f;
+    public float roadEdgeZ = 3.5f;
     public float roadSurfaceY = 0.15f;
     public Material roadSurfaceMaterial; // should be the pavement/sidewalk material
 

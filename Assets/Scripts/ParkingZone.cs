@@ -8,7 +8,7 @@ public class ParkingZone : MonoBehaviour
 {
     public float zoneLength = 40f;
     public int side = 1;
-    public float curbZ = 2.5f;     // must match road tile edge
+    public float curbZ = 3.5f;     // must match road tile edge (7m wide road = ±3.5m)
     public float parkingExtra = 4.5f;
     public GameObject[] carPrefabs;
     public Material roadSurfaceMaterial; // set by ProceduralStreet — matches road tile asphalt
@@ -25,18 +25,17 @@ public class ParkingZone : MonoBehaviour
     {
         float bayZ = curbZ + parkingExtra;
 
-        // Pavement slab only for the extra parking strip beyond existing sidewalk edge.
+        // Dark grey asphalt slab for the parking bay
         float roadSurfaceY = 0.15f;
         float slabTop      = roadSurfaceY + 0.003f;
         float slabH        = slabTop;
-        // Centre at middle of the extra strip, starting from curbZ outward.
         float slabCentreZ  = curbZ + parkingExtra * 0.5f;
-        var asphaltMat = roadSurfaceMaterial != null ? roadSurfaceMaterial : Mat(new Color(0.24f, 0.24f, 0.24f));
+        var asphaltMat = Mat(new Color(0.20f, 0.20f, 0.20f));
         Block(asphaltMat,
             new Vector3(zoneLength * 0.5f, slabTop - slabH * 0.5f, s * slabCentreZ),
             new Vector3(zoneLength, slabH, parkingExtra));
 
-        // Blue/white painted stripe — both the road-facing inner edge and the outer far edge
+        // Blue/white stripe only on the road-facing (inner) edge — left of the cars
         int segs = Mathf.CeilToInt(zoneLength / 0.65f);
         var blueMat  = Mat(new Color(0.10f, 0.22f, 0.80f));
         var whiteMat = Mat(Color.white);
@@ -44,13 +43,8 @@ public class ParkingZone : MonoBehaviour
         for (int i = 0; i < segs; i++)
         {
             var mat = (i % 2 == 0) ? blueMat : whiteMat;
-            // Inner stripe (road side) — this is the kerb the user sees from the street
             Block(mat,
                 new Vector3(i * 0.65f + 0.325f, stripeY, s * curbZ),
-                new Vector3(0.63f, 0.012f, 0.22f));
-            // Outer stripe (far edge of bay)
-            Block(mat,
-                new Vector3(i * 0.65f + 0.325f, stripeY, s * bayZ),
                 new Vector3(0.63f, 0.012f, 0.22f));
         }
 

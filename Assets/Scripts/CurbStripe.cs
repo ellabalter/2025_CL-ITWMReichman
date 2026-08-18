@@ -8,7 +8,7 @@ public class CurbStripe : MonoBehaviour
     public float stripeHeight = 0.14f;  // raised kerb height
     public float segmentLength = 0.5f;
     public int side = 1;
-    public float zOffset = 2.5f;        // road tile edge (road maxZ=2.5 in world space)
+    public float zOffset = 3.5f;        // road tile edge (road maxZ=3.5 after 7m width)
     public float gapStart  = -1f;        // local X where gap begins (-1 = no gap)
     public float gapEnd    = -1f;        // local X where gap ends
     public float gap2Start = -1f;        // optional second gap
