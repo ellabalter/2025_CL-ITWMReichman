@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 129e3722f1ef70446b54b1e0ab18f8ee
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 352230
+  packageName: MAR-Low Poly Outdoor AC Unit
+  packageVersion: 1.0
+  assetPath: Assets/LowPoly_Outdoor_AC_Unit/LowPoly_Outdoor_AC_Unit_Renderer.asset
+  uploadId: 839384
