@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.52, g: 0.58, b: 0.68, a: 1}
   m_AmbientEquatorColor: {r: 0.45, g: 0.42, b: 0.38, a: 1}
   m_AmbientGroundColor: {r: 0.22, g: 0.2, b: 0.17, a: 1}
-  m_AmbientIntensity: 0.85
-  m_AmbientMode: 1
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5acfda506f922411c968a367e29252b8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2799,88 +2799,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310575010}
   m_CullTransparentMesh: 1
---- !u!21 &310763523
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Standard
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.05
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 0.58, g: 0.55, b: 0.42, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &318343540
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,8 +4648,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518745687}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10427965, y: -0.28805885, z: -0.031573325, w: -0.9513942}
-  m_LocalPosition: {x: -3.1559317, y: 11.77809, z: -78.104485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4834,7 +4752,7 @@ Transform:
   m_GameObject: {fileID: 547384757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1.7, z: -1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5042,6 +4960,8 @@ MonoBehaviour:
   turnRate: 40
   driveDurationSeconds: 300
   loopStartX: 0
+  laneZ: -1.8
+  lockToLane: 1
 --- !u!1 &553328841
 GameObject:
   m_ObjectHideFlags: 0
@@ -13774,7 +13694,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 310763523}
+  - {fileID: 2100000, guid: d0719f8dea5f84a028245761d4431d08, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14593,25 +14513,33 @@ MonoBehaviour:
   - {fileID: 3114957575949065144, guid: 1da1bdabfc1fe4cb78a6e21c43d9d100, type: 3}
   gasStationPrefabs:
   - {fileID: 3990459390172133456, guid: b584be1c9c52e45f0aadbf8aa9897c8f, type: 3}
-  trashCanPrefab: {fileID: 5390452360692660160, guid: 5621aa4915c640b4da9c0a273c74e932, type: 3}
+  trashCanPrefab: {fileID: 3505985844223655545, guid: fc9ca2561fa1b4b899b395f149530451, type: 3}
   supermarketEveryNChunks: 8
-  catsPerChunk: 2
+  catsPerChunk: 1
   electricityPoleEveryNTiles: 5
-  parkingZoneEveryNChunks: 15
+  parkingZoneEveryNChunks: 8
   parkingCarPrefabs:
   - {fileID: 793685457875359081, guid: 9c92406c14c380849bca38280c133c64, type: 3}
   - {fileID: 3786326439804512758, guid: f4e73d783d681e04ca355f6c8a50af8e, type: 3}
   - {fileID: 2922220883736789182, guid: 041e4e3100f07184cacfe35dce34f022, type: 3}
   tileLength: 10
   tilesPerChunk: 10
-  chunksAhead: 6
-  chunksBehind: 2
-  lotHalfWidth: 14
-  sidewalkZ: 5.5
+  chunksAhead: 3
+  chunksBehind: 1
+  lotHalfWidth: 16.5
+  sidewalkZ: 6.2
   roadY: 0.15
   lotMargin: 1.5
   playgroundEveryNChunks: 4
   gasStationEveryNChunks: 6
+  parkEveryNChunks: 3
+  catPrefab: {fileID: 2398738074492203840, guid: a8ee473beedea4ceeb77fdef0833fe9a, type: 3}
+  billboardPrefab: {fileID: 4506147045173030055, guid: 5c65d3449d59f4b138bfa8f9615d016f, type: 3}
+  billboardAds:
+  - {fileID: 2800000, guid: cfe89d96292e64e9688c7e4b59379738, type: 3}
+  - {fileID: 2800000, guid: 76f5003cfed904c43b0f7f377a8f6b6b, type: 3}
+  billboardEveryNChunks: 2
+  billboardsPerChunk: 1
   seedOffset: 1337
   showEditorPreview: 1
 --- !u!4 &1906125916

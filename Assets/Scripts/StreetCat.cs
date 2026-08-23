@@ -1,17 +1,20 @@
 using UnityEngine;
 
-// A cat that paces back and forth along the sidewalk.
-// Attach a cat prefab as the visual child; this script drives movement.
 [ExecuteAlways]
 public class StreetCat : MonoBehaviour
 {
-    public float patrolRange = 6f;   // metres each way from start
-    public float speed       = 0.8f; // m/s
+    public float patrolRange = 5f;
+    public float speed       = 0.7f;
     public GameObject catPrefab;
 
-    private Vector3 _origin;
-    private float   _dir = 1f;
-    private bool    _built;
+    // Clamp patrol to stay on sidewalk (set by ProceduralStreet)
+    public float sidewalkMinZ = 1.5f;
+    public float sidewalkMaxZ = 5.0f;
+
+    private Vector3  _origin;
+    private float    _dir = 1f;
+    private Animator _anim;
+    private bool     _built;
 
     public void Build()
     {
@@ -21,6 +24,7 @@ public class StreetCat : MonoBehaviour
             else DestroyImmediate(c.gameObject);
         }
         if (catPrefab == null) return;
+
         GameObject go;
 #if UNITY_EDITOR
         if (!Application.isPlaying)
@@ -28,10 +32,24 @@ public class StreetCat : MonoBehaviour
         else
 #endif
             go = Instantiate(catPrefab, transform);
+
         if (go == null) return;
         go.transform.localPosition = Vector3.zero;
-        go.transform.localScale    = Vector3.one * 0.35f; // cats are small
+        go.transform.localRotation = Quaternion.identity;
+        go.transform.localScale = Vector3.one;
         go.hideFlags = HideFlags.DontSave;
+
+        var rends = go.GetComponentsInChildren<Renderer>();
+        if (rends.Length > 0)
+        {
+            var b = rends[0].bounds;
+            for (int i = 1; i < rends.Length; i++) b.Encapsulate(rends[i].bounds);
+            var p = go.transform.position;
+            go.transform.position = new Vector3(p.x, p.y - b.min.y, p.z);
+        }
+
+        _anim = go.GetComponentInChildren<Animator>();
+
         _origin = transform.position;
         _built  = true;
     }
@@ -39,18 +57,29 @@ public class StreetCat : MonoBehaviour
     void Start()
     {
         _origin = transform.position;
+        _anim   = GetComponentInChildren<Animator>();
         _built  = true;
     }
 
     void Update()
     {
         if (!Application.isPlaying || !_built) return;
-        transform.position += Vector3.right * (_dir * speed * Time.deltaTime);
+
+        transform.position += transform.forward * speed * Time.deltaTime;
+
         float dist = transform.position.x - _origin.x;
         if (dist > patrolRange || dist < -patrolRange)
         {
             _dir = -_dir;
             transform.Rotate(0f, 180f, 0f);
         }
+
+        var p = transform.position;
+        int side = p.z >= 0 ? 1 : -1;
+        float absZ = Mathf.Abs(p.z);
+        absZ = Mathf.Clamp(absZ, sidewalkMinZ, sidewalkMaxZ);
+        transform.position = new Vector3(p.x, p.y, side * absZ);
+
+        if (_anim != null) _anim.SetFloat("Vert", 1f);
     }
 }
