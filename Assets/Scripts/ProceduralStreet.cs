@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BlockType { Playground, Parking, GasStation }
+
 [ExecuteAlways]
 public class ProceduralStreet : MonoBehaviour
 {
@@ -42,8 +44,17 @@ public class ProceduralStreet : MonoBehaviour
     public int seedOffset = 1337;
     public bool showEditorPreview = true;
 
+    [Header("Block System")]
+    [Tooltip("Drive Length — how many blocks total. Street hard-stops after the last block.")]
+    public int driveLength = 3;
+    [Tooltip("How many chunks (100 m each) make up one block.")]
+    public int chunksPerBlock = 5;
+
     private readonly Dictionary<int, GameObject> _spawned = new Dictionary<int, GameObject>();
     private int _lastChunk = int.MinValue;
+    private BlockType[] _blockSequence;
+    private int _builtSeqSeed = int.MinValue;
+    private int _builtDriveLength;
 
     void OnEnable()
     {
@@ -76,21 +87,46 @@ public class ProceduralStreet : MonoBehaviour
     [ContextMenu("Rebuild Preview")]
     public void Rebuild()
     {
+        _blockSequence = null;
         ClearAll();
         RefreshChunks();
     }
 
+    [ContextMenu("Randomize Block Order")]
+    public void RandomizeBlocks()
+    {
+        seedOffset = UnityEngine.Random.Range(0, 99999);
+        Rebuild();
+    }
+
+    [ContextMenu("Print Block Order")]
+    public void PrintBlockOrder()
+    {
+        _blockSequence = null;
+        BuildBlockSequence();
+        var sb = new System.Text.StringBuilder();
+        sb.Append("Block order (Drive Length=" + driveLength + ", seed=" + seedOffset + "):\n");
+        for (int i = 0; i < _blockSequence.Length; i++)
+            sb.Append("  Block " + (i + 1) + ": " + _blockSequence[i] + "\n");
+        Debug.Log(sb.ToString());
+    }
+
+    void OnValidate() { _blockSequence = null; }
+
     void RefreshChunks()
     {
         int cur = driver == null ? 0 : Mathf.FloorToInt(driver.position.x / (tileLength * tilesPerChunk));
-        for (int i = cur - chunksBehind; i <= cur + chunksAhead; i++)
+        int maxChunk = Mathf.Max(1, driveLength) * Mathf.Max(1, chunksPerBlock) - 1;
+        int lo = Mathf.Max(0, cur - chunksBehind);
+        int hi = Mathf.Min(cur + chunksAhead, maxChunk);
+        for (int i = lo; i <= hi; i++)
         {
             if (!_spawned.ContainsKey(i) || _spawned[i] == null) SpawnChunk(i);
         }
         var toRemove = new List<int>();
         foreach (var kv in _spawned)
         {
-            if (kv.Key < cur - chunksBehind || kv.Key > cur + chunksAhead) toRemove.Add(kv.Key);
+            if (kv.Key < lo || kv.Key > hi) toRemove.Add(kv.Key);
         }
         foreach (var k in toRemove) DestroyChunk(k);
     }
@@ -127,17 +163,18 @@ public class ProceduralStreet : MonoBehaviour
         var rng = new System.Random(idx * 7919 + seedOffset);
         float chunkStartX = idx * tileLength * tilesPerChunk;
 
-        bool hasLot = parkingZoneEveryNChunks > 0 && idx % parkingZoneEveryNChunks == 0;
+        BlockType blockType = GetBlockType(idx);
+        bool hasLot = blockType == BlockType.Parking;
         bool hasParkingZone = hasLot;
-        // -1 is the driver's right when facing +X (right-hand traffic).
-        int pzSideDet = (idx / (parkingZoneEveryNChunks > 0 ? parkingZoneEveryNChunks : 1) % 2 == 0) ? -1 : 1;
+        // Alternate parking side with each successive block index
+        int pzSideDet = (Mathf.FloorToInt((float)idx / Mathf.Max(1, chunksPerBlock))) % 2 == 0 ? -1 : 1;
         int lotSide = -pzSideDet;
 
         // Carriageway is the overlay slab; skip the original 10m tiles (hidden
         // meshes were still thousands of transforms for no visible gain).
 
-        bool placePlayground = playgroundPrefabs != null && playgroundPrefabs.Length > 0 && playgroundEveryNChunks > 0 && (idx % playgroundEveryNChunks == 0);
-        bool placeGasStation = gasStationPrefabs != null && gasStationPrefabs.Length > 0 && gasStationEveryNChunks > 0 && (idx % gasStationEveryNChunks == 0);
+        bool placePlayground = blockType == BlockType.Playground && playgroundPrefabs != null && playgroundPrefabs.Length > 0;
+        bool placeGasStation = blockType == BlockType.GasStation && gasStationPrefabs != null && gasStationPrefabs.Length > 0;
 
         int playgroundTile = rng.Next(tilesPerChunk);
         int playgroundSide = rng.NextDouble() < 0.5 ? -1 : 1;
@@ -221,7 +258,7 @@ public class ProceduralStreet : MonoBehaviour
             CheapBuilding(g);
         }
 
-        bool placePark = parkEveryNChunks > 0 && idx % parkEveryNChunks == 0 && !hasLot;
+        bool placePark = parkEveryNChunks > 0 && idx % parkEveryNChunks == 0 && blockType == BlockType.Playground;
         if (placePark)
         {
             int parkSide = (rng.NextDouble() < 0.5 ? -1 : 1);
@@ -370,12 +407,14 @@ public class ProceduralStreet : MonoBehaviour
             GroundAlign(g);
         }
 
-        bool spawnBillboard = billboardPrefab != null && billboardsPerChunk > 0 && billboardEveryNChunks > 0
-            && ((idx % billboardEveryNChunks) + billboardEveryNChunks) % billboardEveryNChunks == 0;
+        // GasStation blocks always spawn billboards (more of them); other blocks use the normal cadence.
+        bool spawnBillboard = billboardPrefab != null && billboardsPerChunk > 0 && (
+            blockType == BlockType.GasStation ||
+            (billboardEveryNChunks > 0 && ((idx % billboardEveryNChunks) + billboardEveryNChunks) % billboardEveryNChunks == 0));
         if (idx == 0) spawnBillboard = billboardPrefab != null && billboardsPerChunk > 0;
         if (spawnBillboard)
         {
-            int n = Mathf.Max(1, billboardsPerChunk);
+            int n = Mathf.Max(1, blockType == BlockType.GasStation ? billboardsPerChunk + 2 : billboardsPerChunk);
             float bbChunkLen = tileLength * tilesPerChunk;
             for (int i = 0; i < n; i++)
             {
@@ -483,7 +522,8 @@ public class ProceduralStreet : MonoBehaviour
             {
                 int catT = rng.Next(tilesPerChunk);
                 catX = chunkStartX + catT * tileLength + (float)(rng.NextDouble() * tileLength * 0.8f);
-                catZ = catSide * (sidewalkZ + 0.5f + (float)(rng.NextDouble() * 2.5f));
+                // Place cats on the visible sidewalk (between curb and outer edge)
+                catZ = catSide * (RoadEdgeZ + 0.8f + (float)(rng.NextDouble() * (sidewalkZ - RoadEdgeZ - 1.2f)));
             }
 
             SpawnStreetCat(
@@ -550,7 +590,8 @@ public class ProceduralStreet : MonoBehaviour
 
         var catGo = new GameObject("StreetCat");
         catGo.transform.SetParent(parent, worldPositionStays: false);
-        catGo.transform.position = pos;
+        // Place at Y=0 so Build()'s ground-align lands feet at Y=0, then we lift to road surface
+        catGo.transform.position = new Vector3(pos.x, 0f, pos.z);
         catGo.transform.rotation = Quaternion.Euler(0f, yaw, 0f);
 
         try
@@ -559,10 +600,14 @@ public class ProceduralStreet : MonoBehaviour
             sc.catPrefab = catPrefab;
             sc.patrolRange = 3f + (float)(rng.NextDouble() * 4f);
             sc.speed = 0.5f + (float)(rng.NextDouble() * 0.4f);
-            sc.sidewalkMinZ = sidewalkZ - 0.5f;
-            sc.sidewalkMaxZ = sidewalkZ + 3.5f;
+            sc.sidewalkMinZ = RoadEdgeZ + 0.3f;
+            sc.sidewalkMaxZ = sidewalkZ;
             sc.Build();
+            // Build() aligns the model feet to Y=0; lift the whole cat up to the road surface
+            var cp = catGo.transform.position;
+            catGo.transform.position = new Vector3(cp.x, roadY, cp.z);
             CheapProp(catGo);
+            Debug.Log("Cat spawned at " + catGo.transform.position);
         }
         catch (System.Exception ex)
         {
@@ -890,5 +935,34 @@ public class ProceduralStreet : MonoBehaviour
     {
         t.gameObject.hideFlags = HideFlags.DontSave;
         for (int i = 0; i < t.childCount; i++) SetHideFlagsRecursive(t.GetChild(i));
+    }
+
+    BlockType GetBlockType(int chunkIdx)
+    {
+        BuildBlockSequence();
+        int n = Mathf.Max(1, chunksPerBlock);
+        int blockFloor = Mathf.FloorToInt((float)chunkIdx / n);
+        int blockIdx = Mathf.Clamp(blockFloor, 0, Mathf.Max(1, driveLength) - 1);
+        return _blockSequence[blockIdx];
+    }
+
+    void BuildBlockSequence()
+    {
+        int safeCount = Mathf.Max(1, driveLength);
+        if (_blockSequence != null && _builtSeqSeed == seedOffset && _builtDriveLength == safeCount) return;
+        _builtSeqSeed    = seedOffset;
+        _builtDriveLength = safeCount;
+        _blockSequence   = new BlockType[safeCount];
+        var types = new BlockType[] { BlockType.Playground, BlockType.Parking, BlockType.GasStation };
+        var rng = new System.Random(seedOffset ^ 0xBEEF);
+        int lastPick = -1;
+        for (int i = 0; i < safeCount; i++)
+        {
+            int pick;
+            int tries = 0;
+            do { pick = rng.Next(types.Length); tries++; } while (pick == lastPick && tries < 10);
+            _blockSequence[i] = types[pick];
+            lastPick = pick;
+        }
     }
 }

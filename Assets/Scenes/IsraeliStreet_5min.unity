@@ -14518,13 +14518,10 @@ MonoBehaviour:
   catsPerChunk: 1
   electricityPoleEveryNTiles: 5
   parkingZoneEveryNChunks: 8
-  parkingCarPrefabs:
-  - {fileID: 793685457875359081, guid: 9c92406c14c380849bca38280c133c64, type: 3}
-  - {fileID: 3786326439804512758, guid: f4e73d783d681e04ca355f6c8a50af8e, type: 3}
-  - {fileID: 2922220883736789182, guid: 041e4e3100f07184cacfe35dce34f022, type: 3}
+  parkingCarPrefabs: []
   tileLength: 10
   tilesPerChunk: 10
-  chunksAhead: 3
+  chunksAhead: 15
   chunksBehind: 1
   lotHalfWidth: 16.5
   sidewalkZ: 6.2
@@ -14542,6 +14539,8 @@ MonoBehaviour:
   billboardsPerChunk: 1
   seedOffset: 1337
   showEditorPreview: 1
+  blockCount: 3
+  chunksPerBlock: 5
 --- !u!4 &1906125916
 Transform:
   m_ObjectHideFlags: 0
