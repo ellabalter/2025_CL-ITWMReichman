@@ -612,22 +612,9 @@ public class ProceduralStreet : MonoBehaviour
             foreach (Transform c in chunk.transform)
                 if (c.name.StartsWith("TrashBin")) trashPositions.Add(c.position);
 
-            int catsThisChunk = 2 + rng.Next(2); // 2–3 cats per chunk
+            int catsThisChunk = Mathf.Max(0, catsPerChunk);
             for (int ci = 0; ci < catsThisChunk; ci++)
             {
-                var bin = trashPositions[rng.Next(trashPositions.Count)];
-                catX = bin.x + (float)(rng.NextDouble() * 1.5 - 0.75);
-                catZ = bin.z + (float)(rng.NextDouble() * 0.6 - 0.3);
-                catSide = bin.z >= 0 ? 1 : -1;
-            }
-            else
-            {
-                int catT = rng.Next(tilesPerChunk);
-                catX = chunkStartX + catT * tileLength + (float)(rng.NextDouble() * tileLength * 0.8f);
-                // Place cats on the visible sidewalk (between curb and outer edge)
-                catZ = catSide * (RoadEdgeZ + 0.8f + (float)(rng.NextDouble() * (sidewalkZ - RoadEdgeZ - 1.2f)));
-            }
-
                 if (trashPositions.Count > 0 && rng.NextDouble() < 0.6f)
                 {
                     // Place next to a trash bin
