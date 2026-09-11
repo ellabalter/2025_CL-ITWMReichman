@@ -985,12 +985,8 @@ public class ProceduralStreet : MonoBehaviour
         if (rends.Length == 0) return;
         var b = rends[0].bounds;
         for (int i = 1; i < rends.Length; i++) b.Encapsulate(rends[i].bounds);
-        float minY = b.min.y;
-        float extra = 0f;
-        var facing = go.GetComponent<BuildingFacing>();
-        if (facing != null) extra = facing.groundOffset;
         var p = go.transform.position;
-        go.transform.position = new Vector3(p.x, p.y - minY + extra, p.z);
+        go.transform.position = new Vector3(p.x, p.y - b.min.y, p.z);
     }
 
     void KeepOffRoad(GameObject go, int side)
