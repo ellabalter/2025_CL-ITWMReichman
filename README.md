@@ -47,3 +47,36 @@ All blocks always have the same base: road, red/white curb, electricity poles + 
 6. To get a different random order, right-click → **Randomize Block Order** (or change **Seed Offset**)
 7. **Chunks Per Block** controls how long each block is (1 chunk ≈ 100 m, default 5 = 500 m per block)
 8. Press **Play** to drive through the street in first-person — the street hard-stops after the last block
+
+## Pedestrian System
+
+Walking pedestrians are spawned automatically on both sidewalks. Each pedestrian gets a randomly colored shirt (red, blue, green, orange, purple, black, white, or teal).
+
+### How to set up pedestrians (first time)
+
+The character FBX files (`Walking.fbx`, `Walking (1).fbx`) are already in the Assets folder. To wire them up:
+
+1. Click `Walking.fbx` in the Project panel (bottom of Unity)
+2. In the Inspector, click the **Rig** tab → set **Animation Type** to **Legacy** → click **Apply**
+3. Click the **Animation** tab → click the clip in the list → check **Loop Time** → click **Apply**
+4. Repeat steps 2–3 for `Walking (1).fbx`
+5. Click **StreetManager** in the Hierarchy
+6. In the Inspector, scroll down to **Pedestrian Prefabs**
+7. Change **Size** from 0 to **2** and press Enter — two slots appear
+8. Drag `Walking.fbx` from the Project panel into **Element 0**
+9. Drag `Walking (1).fbx` into **Element 1**
+10. Right-click **Procedural Street (Script)** → **Rebuild Preview**, then press **Play**
+
+### To add more character variety (optional)
+
+Download additional characters from **mixamo.com** (free with Adobe account):
+- Go to Characters → pick a character → Animations → search "Walking" → check **In Place** → download **FBX for Unity with Skin**
+- Import into Unity Assets, set to **Legacy** rig, extract materials
+- Add to the **Pedestrian Prefabs** list (increase Size and drag in)
+
+### Inspector settings
+
+| Field | Default | What it does |
+|---|---|---|
+| Pedestrian Prefabs | — | Drag your Walking FBX files here |
+| Pedestrians Per Chunk | 3 | How many pedestrians spawn per ~100m section |

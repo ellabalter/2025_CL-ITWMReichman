@@ -35,6 +35,8 @@ public class ProceduralStreet : MonoBehaviour
     public int gasStationEveryNChunks = 10;
     public int parkEveryNChunks = 3;
     public GameObject catPrefab;
+    public GameObject[] pedestrianPrefabs;
+    public int pedestriansPerChunk = 3;
     public GameObject billboardPrefab;
     [Tooltip("Ten Bis / Clalit posters pasted on some building walls.")]
     public Texture[] billboardAds;
@@ -43,6 +45,14 @@ public class ProceduralStreet : MonoBehaviour
     public int billboardsPerChunk = 1;
     public int seedOffset = 1337;
     public bool showEditorPreview = true;
+
+    [Header("City Backdrop")]
+    [Tooltip("Material with a city panorama texture — applied to planes behind the buildings.")]
+    public Material cityBackdropMaterial;
+    [Tooltip("Distance behind the building line (metres).")]
+    public float backdropDistance = 4f;
+    [Tooltip("Height of the backdrop wall (metres).")]
+    public float backdropHeight = 50f;
 
     [Header("Block System")]
     [Tooltip("Drive Length — how many blocks total. Street hard-stops after the last block.")]
@@ -242,6 +252,36 @@ public class ProceduralStreet : MonoBehaviour
         }
 
         StickWallPosters(placedBuildings, chunk.transform, idx, rng);
+
+        // Background city — two staggered rows of buildings behind the building line, on both sides always
+        if (buildingPrefabs != null && buildingPrefabs.Length > 0)
+        {
+            for (int row = 0; row < 2; row++)
+            {
+                float bgZ = lotHalfWidth + 16f + row * 16f;
+                int bgStep = row == 0 ? 2 : 3;
+                float scaleMin = row == 0 ? 1.0f : 1.2f;
+                float scaleRange = row == 0 ? 0.6f : 0.8f;
+                for (int t = row; t < tilesPerChunk; t += bgStep)
+                {
+                    for (int side = -1; side <= 1; side += 2)
+                    {
+                        var pf = buildingPrefabs[rng.Next(buildingPrefabs.Length)];
+                        var b = InstantiateChild(pf, chunk.transform);
+                        var facing = b.GetComponent<BuildingFacing>();
+                        float facingOffset = facing != null ? facing.yawOffset : 0f;
+                        float baseYaw = (side > 0 ? 180f : 0f) + facingOffset;
+                        b.transform.rotation = Quaternion.Euler(0f, baseYaw, 0f) * b.transform.rotation;
+                        float xJit = (float)(rng.NextDouble() * 4.0 - 2.0);
+                        float zJit = (float)(rng.NextDouble() * 4.0);
+                        b.transform.position = new Vector3(chunkStartX + t * tileLength + xJit, 0f, side * (bgZ + zJit));
+                        float sc = scaleMin + (float)(rng.NextDouble() * scaleRange);
+                        b.transform.localScale *= sc;
+                        CheapBuilding(b);
+                    }
+                }
+            }
+        }
 
         if (placePlayground)
         {
@@ -533,6 +573,18 @@ public class ProceduralStreet : MonoBehaviour
                 rng);
         }
 
+        if (pedestrianPrefabs != null && pedestrianPrefabs.Length > 0 && pedestriansPerChunk > 0)
+        {
+            for (int pi = 0; pi < pedestriansPerChunk; pi++)
+            {
+                int side = rng.NextDouble() < 0.5 ? -1 : 1;
+                float px = chunkStartX + (float)(rng.NextDouble() * tilesPerChunk * tileLength);
+                float pz = side * (RoadEdgeZ + 1.0f + (float)(rng.NextDouble() * (sidewalkZ - RoadEdgeZ - 1.4f)));
+                float yaw = (rng.NextDouble() < 0.5 ? 90f : 270f) + (float)(rng.NextDouble() * 10.0 - 5.0);
+                SpawnPedestrian(chunk.transform, new Vector3(px, roadY, pz), yaw, rng);
+            }
+        }
+
         if (electricityPoleEveryNTiles > 0)
         {
             float poleSpacingM = electricityPoleEveryNTiles * tileLength;
@@ -581,6 +633,35 @@ public class ProceduralStreet : MonoBehaviour
             pl.Build();
         }
 
+        {
+            float bdLen = tileLength * tilesPerChunk;
+            float cx = chunkStartX + bdLen * 0.5f;
+            float backdropZ = lotHalfWidth + backdropDistance;
+            Material bdMat = cityBackdropMaterial != null ? cityBackdropMaterial : MakeCityBackdrop();
+            for (int side = -1; side <= 1; side += 2)
+            {
+                for (int row = 0; row < 2; row++)
+                {
+                    float rowZ = backdropZ + row * 20f;
+                    float rowH = backdropHeight - row * 8f;
+                    float halfH = rowH * 0.5f;
+                    var quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+                    quad.name = "CityBackdrop";
+                    quad.transform.SetParent(chunk.transform, false);
+                    quad.hideFlags = HideFlags.DontSave;
+                    quad.transform.position = new Vector3(cx, halfH, side * rowZ);
+                    quad.transform.rotation = Quaternion.Euler(0f, side > 0 ? 180f : 0f, 0f);
+                    quad.transform.localScale = new Vector3(bdLen, rowH, 1f);
+                    var r = quad.GetComponent<Renderer>();
+                    r.sharedMaterial = bdMat;
+                    r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                    r.receiveShadows = false;
+                    var col = quad.GetComponent<Collider>();
+                    if (col != null) { if (Application.isPlaying) Destroy(col); else DestroyImmediate(col); }
+                }
+            }
+        }
+
         _spawned[idx] = chunk;
     }
 
@@ -607,7 +688,6 @@ public class ProceduralStreet : MonoBehaviour
             var cp = catGo.transform.position;
             catGo.transform.position = new Vector3(cp.x, roadY, cp.z);
             CheapProp(catGo);
-            Debug.Log("Cat spawned at " + catGo.transform.position);
         }
         catch (System.Exception ex)
         {
@@ -615,6 +695,89 @@ public class ProceduralStreet : MonoBehaviour
         }
 
         SetHideFlagsRecursive(catGo.transform);
+    }
+
+    void SpawnPedestrian(Transform parent, Vector3 pos, float yaw, System.Random rng)
+    {
+        if (pedestrianPrefabs == null || pedestrianPrefabs.Length == 0) return;
+        var pf = pedestrianPrefabs[rng.Next(pedestrianPrefabs.Length)];
+        if (pf == null) return;
+
+        var go = new GameObject("Pedestrian");
+        go.transform.SetParent(parent, worldPositionStays: false);
+        go.transform.position = new Vector3(pos.x, 0f, pos.z);
+        go.transform.rotation = Quaternion.Euler(0f, yaw, 0f);
+        go.hideFlags = HideFlags.DontSave;
+
+        try
+        {
+            GameObject model;
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+                model = (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(pf, go.transform);
+            else
+#endif
+                model = Instantiate(pf, go.transform);
+
+            model.transform.localPosition = Vector3.zero;
+            model.transform.localRotation = Quaternion.identity;
+
+            // Ground-align: shift up so feet sit at Y=0
+            var rends = model.GetComponentsInChildren<Renderer>();
+            if (rends.Length > 0)
+            {
+                var b = rends[0].bounds;
+                foreach (var r in rends) b.Encapsulate(r.bounds);
+                var p = model.transform.position;
+                model.transform.position = new Vector3(p.x, p.y - b.min.y, p.z);
+            }
+
+            model.hideFlags = HideFlags.DontSave;
+
+            // Play legacy animation (Mixamo FBX imported with Legacy rig)
+            var legacyAnim = model.GetComponentInChildren<Animation>();
+            if (legacyAnim != null) { legacyAnim.wrapMode = WrapMode.Loop; legacyAnim.Play(); }
+
+            // Random shirt colour — tints the body material per pedestrian
+            Color[] shirtColors = {
+                new Color(0.85f, 0.20f, 0.20f), // red
+                new Color(0.20f, 0.40f, 0.85f), // blue
+                new Color(0.20f, 0.65f, 0.25f), // green
+                new Color(0.90f, 0.55f, 0.10f), // orange
+                new Color(0.55f, 0.20f, 0.70f), // purple
+                new Color(0.15f, 0.15f, 0.15f), // black
+                new Color(0.95f, 0.95f, 0.95f), // white
+                new Color(0.30f, 0.55f, 0.50f), // teal
+            };
+            Color shirt = shirtColors[rng.Next(shirtColors.Length)];
+            var block = new MaterialPropertyBlock();
+            foreach (var r in model.GetComponentsInChildren<Renderer>())
+            {
+                if (r.sharedMaterial != null && r.sharedMaterial.name.ToLower().Contains("body"))
+                {
+                    r.GetPropertyBlock(block);
+                    block.SetColor("_BaseColor", shirt);
+                    block.SetColor("_Color", shirt);
+                    r.SetPropertyBlock(block);
+                }
+            }
+
+            var sp = go.AddComponent<StreetPedestrian>();
+            sp.speed = 1.2f + (float)(rng.NextDouble() * 0.4);
+            sp.patrolRange = 12f + (float)(rng.NextDouble() * 10f);
+            sp.sidewalkMinZ = RoadEdgeZ + 0.5f;
+            sp.sidewalkMaxZ = sidewalkZ;
+            sp.Build();
+
+            var cp = go.transform.position;
+            go.transform.position = new Vector3(cp.x, roadY, cp.z);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogWarning("Pedestrian spawn failed: " + ex.Message);
+        }
+
+        SetHideFlagsRecursive(go.transform);
     }
 
     void StripBakedStreetFurniture(GameObject road)
@@ -643,6 +806,22 @@ public class ProceduralStreet : MonoBehaviour
         {
             if (Application.isPlaying) Destroy(go); else DestroyImmediate(go);
         }
+    }
+
+    static Material _cityBackdrop;
+    static Material MakeCityBackdrop()
+    {
+        if (_cityBackdrop == null)
+        {
+            var sh = Shader.Find("Universal Render Pipeline/Lit");
+            if (sh == null) sh = Shader.Find("Standard");
+            _cityBackdrop = new Material(sh);
+            _cityBackdrop.color = new Color(0.72f, 0.70f, 0.66f);
+            if (_cityBackdrop.HasProperty("_Smoothness")) _cityBackdrop.SetFloat("_Smoothness", 0f);
+            if (_cityBackdrop.HasProperty("_Glossiness")) _cityBackdrop.SetFloat("_Glossiness", 0f);
+            _cityBackdrop.hideFlags = HideFlags.HideAndDontSave;
+        }
+        return _cityBackdrop;
     }
 
     static Material _asphalt;
