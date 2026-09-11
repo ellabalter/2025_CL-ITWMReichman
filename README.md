@@ -26,3 +26,57 @@ Optimization: Finally, we adjusted and modified the polygon count of the generat
 | Tower Residential Modern Apartment Building | Sketchfab | [View asset](https://sketchfab.com/3d-models/tower-residential-modern-apartment-building-09dafab2164c4112aab37064166b9fc4) | `Environment/Buildings` |
 | Free Low Poly Cars | Unity Asset Store | [View asset](https://assetstore.unity.com/packages/3d/vehicles/mobile-optimize-free-low-poly-cars-327313) | Not specified |
 | Curious Cat | Sketchfab | [View asset](https://sketchfab.com/3d-models/curious-cat-3d-model-free-c1465490a7c74d48b599e1d68ff990ef) | Not specified |
+
+## Block System (Procedural Street Randomization)
+
+The street is divided into blocks, each with its own character. There are 3 block types:
+
+- **Playground block** — playground and green park area on the far side of the sidewalk
+- **Parking block** — blue/white street parking + off-street parking lot
+- **Gas Station block** — gas station + extra billboards and street signs
+
+All blocks always have the same base: road, red/white curb, electricity poles + wires, cats, trees, benches, and a bus stop.
+
+### How to use it
+
+1. Open the scene in Unity and click **StreetManager** in the Hierarchy panel
+2. In the Inspector, scroll down to **Block System**
+3. Set **Drive Length** — how many blocks you want (e.g. 9 = nine blocks, then the street ends)
+4. The system randomly picks one of the 3 block types for each slot, with no two consecutive blocks the same — so 9 blocks could be: Parking → Playground → GasStation → Playground → Parking → GasStation → Playground → Parking → Playground
+5. Right-click **Procedural Street (Script)** in the Inspector → **Rebuild Preview** to see the result in the editor
+6. To get a different random order, right-click → **Randomize Block Order** (or change **Seed Offset**)
+7. **Chunks Per Block** controls how long each block is (1 chunk ≈ 100 m, default 5 = 500 m per block)
+8. Press **Play** to drive through the street in first-person — the street hard-stops after the last block
+
+## Pedestrian System
+
+Walking pedestrians are spawned automatically on both sidewalks. Each pedestrian gets a randomly colored shirt (red, blue, green, orange, purple, black, white, or teal).
+
+### How to set up pedestrians (first time)
+
+The character FBX files (`Walking.fbx`, `Walking (1).fbx`) are already in the Assets folder. To wire them up:
+
+1. Click `Walking.fbx` in the Project panel (bottom of Unity)
+2. In the Inspector, click the **Rig** tab → set **Animation Type** to **Legacy** → click **Apply**
+3. Click the **Animation** tab → click the clip in the list → check **Loop Time** → click **Apply**
+4. Repeat steps 2–3 for `Walking (1).fbx`
+5. Click **StreetManager** in the Hierarchy
+6. In the Inspector, scroll down to **Pedestrian Prefabs**
+7. Change **Size** from 0 to **2** and press Enter — two slots appear
+8. Drag `Walking.fbx` from the Project panel into **Element 0**
+9. Drag `Walking (1).fbx` into **Element 1**
+10. Right-click **Procedural Street (Script)** → **Rebuild Preview**, then press **Play**
+
+### To add more character variety (optional)
+
+Download additional characters from **mixamo.com** (free with Adobe account):
+- Go to Characters → pick a character → Animations → search "Walking" → check **In Place** → download **FBX for Unity with Skin**
+- Import into Unity Assets, set to **Legacy** rig, extract materials
+- Add to the **Pedestrian Prefabs** list (increase Size and drag in)
+
+### Inspector settings
+
+| Field | Default | What it does |
+|---|---|---|
+| Pedestrian Prefabs | — | Drag your Walking FBX files here |
+| Pedestrians Per Chunk | 3 | How many pedestrians spawn per ~100m section |
