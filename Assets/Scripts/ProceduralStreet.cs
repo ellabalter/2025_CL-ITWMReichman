@@ -304,6 +304,7 @@ public class ProceduralStreet : MonoBehaviour
             g.transform.position = new Vector3(chunkStartX + playgroundTile * tileLength, 0f, playgroundSide * (sidewalkZ + 4f));
             GroundAlign(g);
             KeepOffRoad(g, playgroundSide);
+        }
 
         bool placePark = parkEveryNChunks > 0 && idx % parkEveryNChunks == 0 && blockType == BlockType.Playground;
         if (placePark)
@@ -962,18 +963,34 @@ public class ProceduralStreet : MonoBehaviour
     void SpawnSidewalk(Transform parent, Material walkMat, float startX, float length, float y,
         float walkZ, float walk, int side, int skipWalkSide, float skipStart, float skipEnd)
     {
-        // Some prefabs are saved with a baked Y offset — zero it out first
-        var p = go.transform.position;
-        go.transform.position = new Vector3(p.x, 0f, p.z);
+        if (skipWalkSide == side && skipEnd > skipStart)
+        {
+            float a0 = startX;
+            float a1 = startX + skipStart;
+            float b0 = startX + skipEnd;
+            float b1 = startX + length;
+            if (a1 - a0 > 0.5f)
+                Slab(parent, walkMat, new Vector3((a0 + a1) * 0.5f, y - 0.005f, walkZ), new Vector3(a1 - a0, 0.03f, walk));
+            if (b1 - b0 > 0.5f)
+                Slab(parent, walkMat, new Vector3((b0 + b1) * 0.5f, y - 0.005f, walkZ), new Vector3(b1 - b0, 0.03f, walk));
+            return;
+        }
+        float cx = startX + length * 0.5f;
+        Slab(parent, walkMat, new Vector3(cx, y - 0.005f, walkZ), new Vector3(length, 0.03f, walk));
+    }
 
-        // Use only MeshRenderers — skips particle systems / LOD helpers that bloat bounds
+    void GroundAlign(GameObject go)
+    {
         var rends = go.GetComponentsInChildren<MeshRenderer>();
         if (rends.Length == 0) return;
         var b = rends[0].bounds;
         for (int i = 1; i < rends.Length; i++) b.Encapsulate(rends[i].bounds);
         float minY = b.min.y;
-        p = go.transform.position;
-        go.transform.position = new Vector3(p.x, -minY + targetY, p.z);
+        float extra = 0f;
+        var facing = go.GetComponent<BuildingFacing>();
+        if (facing != null) extra = facing.groundOffset;
+        var p = go.transform.position;
+        go.transform.position = new Vector3(p.x, p.y - minY + extra, p.z);
     }
 
     void KeepOffRoad(GameObject go, int side)
